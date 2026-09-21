@@ -12,9 +12,10 @@ class BlogController extends Controller
         $blogs = Blog::orderByDesc('id')->where('status', true)->get();
         return view('index', compact("blogs"));
     }
-    public function detail($id){
+
+    public function detail($id)
+    {
         $blogs = Blog::find($id);
         return view('detail', compact("blogs"));
     }
-   
 }
